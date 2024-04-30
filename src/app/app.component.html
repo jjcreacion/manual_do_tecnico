@@ -1,0 +1,43 @@
+<ion-app>
+  <ion-menu menuId="main-menu" contentId="main">
+    <ion-content>
+      <div class="menu-header-bg"></div>
+      <div class="header-content">
+        <img src="../assets/images/avatar.png" alt="">
+        <ion-label>
+          <h1>Johann Gonzalez</h1>
+          <p>Programador</p>
+        </ion-label>
+      </div>
+      <!--
+      <div class="action-button">
+        <ion-button>
+          <ion-icon slot="start" name="add"></ion-icon> Add Branch
+        </ion-button>
+      </div>  
+        -->
+        <ion-list class="menu-items" lines="none">
+          <ion-item class="active" [routerLink]="['/']">
+              <ion-icon name="home-outline" ></ion-icon>Home
+          </ion-item>
+          <ion-item>
+            <ion-icon name="wallet-outline"></ion-icon>Carteira
+        </ion-item>
+          <ion-item>
+            <ion-icon name="key-outline"></ion-icon>Desbloqueio Remoto
+          </ion-item>
+          <ion-item>
+            <ion-icon name="share-social-outline"></ion-icon>Compartilhiar
+          </ion-item>
+          <ion-item>
+            <ion-icon name="albums-outline"></ion-icon>Ordens de seviço
+          </ion-item>
+          <ion-item>
+            <ion-icon name="exit-outline"></ion-icon>Sair
+          </ion-item>
+        </ion-list>
+      
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

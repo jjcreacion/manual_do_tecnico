@@ -1,0 +1,73 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="my-custom-header">
+ <ion-title>
+  Manual do Técnico
+ </ion-title>
+ <ion-buttons slot="start">
+   <ion-menu-button menu="main-menu"></ion-menu-button>
+ </ion-buttons>
+ <ion-buttons slot="end">
+  <ion-icon name="home-outline" ></ion-icon>Home
+  <ion-icon name="exit-outline"></ion-icon>Sair
+</ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <div id="container">
+  
+  <ion-searchbar class="custom-searchbar ion-margin-top ion-margin-bottom" [debounce]="1000" color="success" placeholder="Procurar" (ionInput)="handleInput($event)"></ion-searchbar> 
+  
+  </div>  
+
+    <ion-grid class="custom-list">
+      <ion-row>
+        <ion-col size="6" size-md="1" class="header-col">N.</ion-col>
+        <ion-col size="6" size-md="11" class="header-col">Modelo</ion-col>
+      </ion-row>
+
+      <ng-container *ngFor="let item of results; let i = index">
+        <ion-row *ngIf="i >= ((itemsPorPagina * paginaActual)-itemsPorPagina) && i < (itemsPorPagina * paginaActual)"  [class]="i % 2 !== 0 ? 'even-row' : 'odd-row'">
+          <ion-col size="6" size-md="1">{{i + 1}}</ion-col>
+          <ion-col size="6" size-md="11">
+            <a href="" (click)="openModal($event,item)">{{ item.texto }} </a> 
+          </ion-col>
+        </ion-row>
+      </ng-container>
+      
+      <ion-row class="even-row">
+        <ion-col size="12" size-md="12">
+          <ion-button (click)="paginaActual = i" *ngFor="let i of generarRango(paginas)" [color]="paginaActual === i ? 'primary' : 'secondary'" >
+            {{i}}
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <!-- Repite ion-row para más filas -->
+    </ion-grid>
+   
+     <ion-modal [isOpen]="isModalOpen" (ionModalDidDismiss)="setOpen(false)">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>{{ selectedItem?.texto }}</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="setOpen(false)">Fechar</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+          
+          <div class="zoom-container">
+            <img [src]="selectedItem?.img" alt="Descripción de la imagen" id="zoom-img" (mousedown)="onMouseDown($event)" (mousemove)="onMouseMove($event)" (mouseup)="onMouseUp()">
+          </div>
+          <div class="zoom-controls">
+            <ion-button (click)="zoomIn()">+</ion-button>
+            <ion-button (click)="zoomOut()">-</ion-button>
+          </div>
+
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+
+</ion-content>

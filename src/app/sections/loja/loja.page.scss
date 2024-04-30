@@ -1,0 +1,69 @@
+.my-custom-header {
+    --background: rgb(50, 173, 226);
+  
+    ion-title{
+      color: #fff;
+    }
+  }
+
+  .custom-searchbar {
+    max-width: 500px; /* Ajusta esto al ancho deseado */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .custom-list {
+    max-width: 600px; /* Ajusta esto al ancho deseado */
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+  }
+
+  .label-centrado {
+    text-align: center; /* Centra el texto horizontalmente */
+    display: flex;
+    align-items: center; /* Centra el contenido verticalmente para elementos flex */
+    justify-content: center; /* Centra el contenido horizontalmente para elementos flex */
+  }
+
+  .header-col {
+    background-color: #3880ff;
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  }
+  
+  .odd-row ion-col {
+    background-color: #f4f4f4;
+  }
+  
+  .even-row ion-col {
+    background-color: #ffffff;
+  }
+  
+  ion-col {
+    text-align: center;
+    padding: 10px 0;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s ease; 
+  }
+
+  ion-row {
+    align-items: center; /* Centra verticalmente  align-items: stretch; */
+  }
+
+  .col-iguales{
+    text-align: center;
+    padding: 10px 0;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s ease; 
+    height: 120px;
+  }
+
+  img{
+    height: 100px;
+    width: 100px;
+  }
+

@@ -1,0 +1,422 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="my-custom-header">
+ <ion-title>
+  Manual do Técnico
+ </ion-title>
+ <ion-buttons slot="start">
+   <ion-menu-button menu="main-menu"></ion-menu-button>
+ </ion-buttons>
+ <ion-buttons slot="end">
+  <ion-icon name="home-outline" ></ion-icon>Home
+  <ion-icon name="exit-outline"></ion-icon>Sair
+</ion-buttons>
+</ion-toolbar>
+</ion-header>
+ 
+<ion-content [fullscreen]="true">
+  <div id="container">
+   <ion-grid fixed>
+     <ion-row>
+       <ion-col>
+         
+       <ion-card [routerLink]="['/conduc']">
+         <ion-card-header>
+           <ion-card-title><ion-icon name="git-compare-outline"></ion-icon></ion-card-title>
+           <ion-card-title> Conduçao Reversa </ion-card-title>
+         </ion-card-header>
+       </ion-card>
+
+     </ion-col>
+       <ion-col>
+
+         <ion-card [routerLink]="['/esque']">
+           <ion-card-header>
+             <ion-card-title><ion-icon name="flash-off-outline"></ion-icon></ion-card-title>
+             <ion-card-title> Esquemas Eléctricos </ion-card-title>
+           </ion-card-header>
+         </ion-card>
+
+       </ion-col>
+       <ion-col>
+
+         <ion-card [routerLink]="['/loja']">
+           <ion-card-header>
+             <ion-card-title><ion-icon name="storefront-outline"></ion-icon></ion-card-title>
+             <ion-card-title> Loja </ion-card-title>
+           </ion-card-header>
+         </ion-card>
+
+       </ion-col>
+       <ion-col>
+
+         <ion-card [routerLink]="['/codigos']">
+           <ion-card-header>
+             <ion-card-title><ion-icon name="code-slash-outline"></ion-icon></ion-card-title>
+             <ion-card-title> Códigos </ion-card-title>
+           </ion-card-header>
+         </ion-card>
+
+       </ion-col>
+       <ion-col>
+         
+         <ion-card [routerLink]="['/aulas']">
+           <ion-card-header>
+             <ion-card-title><ion-icon name="play-circle-outline"></ion-icon></ion-card-title>
+             <ion-card-title> Vídeo Aulas </ion-card-title>
+           </ion-card-header>
+         </ion-card>
+
+       </ion-col>
+     </ion-row>
+
+     <ion-row>
+       <ion-col>
+         
+         <ion-card (click)="openModal($event)" href="">
+           <ion-card-header>
+             <ion-card-title><ion-icon name="desktop-outline"></ion-icon></ion-card-title>
+             <ion-card-title> Softwares </ion-card-title>
+           </ion-card-header>
+         </ion-card>
+
+     </ion-col>
+       <ion-col>
+
+         <ion-card href="https://wa.me/554588312858" target="_blank">
+           <ion-card-header>
+             <ion-card-title><ion-icon name="headset-outline"></ion-icon></ion-card-title>
+             <ion-card-title> Suporte </ion-card-title>
+           </ion-card-header>
+         </ion-card>
+
+       </ion-col>
+       <ion-col>
+
+         <ion-card href="https://play.google.com/store/apps/details?id=com.my.manualdotecnico&hl=pt_BR&gl=US" target="_blank">
+           <ion-card-header>
+             <ion-card-title><ion-icon name="thumbs-up-outline"></ion-icon></ion-card-title>
+             <ion-card-title> FeedBack </ion-card-title>
+           </ion-card-header>
+         </ion-card>
+
+       </ion-col>
+       <ion-col>
+        
+         <ion-card href="https://www.consultaaparelhoimpedido.com.br/public-web/home" target="_blank">
+           <ion-card-header>
+             <ion-card-title><ion-icon name="terminal-outline"></ion-icon></ion-card-title>
+             <ion-card-title> Consultar IMEI </ion-card-title>
+           </ion-card-header>
+         </ion-card>
+
+       </ion-col>
+       <ion-col>
+         <ion-card (click)="openModal2($event)" href="">
+           <ion-card-header>
+             <ion-card-title><ion-icon name="hammer-outline"></ion-icon></ion-card-title>
+             <ion-card-title> Ferramentas FRP </ion-card-title>
+           </ion-card-header>
+         </ion-card>
+
+       </ion-col>
+     </ion-row>
+   </ion-grid>
+ </div>
+
+ <!-- Modal Soft -->
+ <ion-modal [isOpen]="isModalOpen" (ionModalDidDismiss)="setOpen(false)">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>SELECIONE O MODELO</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="setOpen(false)">Fechar</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+    <ion-list style="--ion-background-color: #ffffff;">
+        <ion-item>
+            
+           <ion-icon name="checkmark-outline" class="icon-ferramentas"></ion-icon>
+             <ion-label>
+             Samsung
+             </ion-label>
+             <a href="https://www.stockrom.net/Samsung" target="_blank"> 
+              <ion-icon name="link-outline" class="icon-ferramentas"></ion-icon>
+             </a>
+           
+        </ion-item>
+        <ion-item>
+        
+          <ion-icon name="checkmark-outline" class="icon-ferramentas"></ion-icon>
+             <ion-label>
+             Xiaomi
+             </ion-label>
+           <a href="https://www.stockrom.net/xiaomi" target="_blank">  
+            <ion-icon name="link-outline" class="icon-ferramentas"></ion-icon>
+           </a>
+
+        </ion-item>
+        <ion-item>
+        
+          <ion-icon name="checkmark-outline" class="icon-ferramentas"></ion-icon>
+             <ion-label>
+             LG
+             </ion-label>
+           <a href="https://www.stockrom.net/lg" target="_blank">  
+            <ion-icon name="link-outline" class="icon-ferramentas"></ion-icon>
+           </a>
+
+        </ion-item>
+        <ion-item>
+        
+          <ion-icon name="checkmark-outline" class="icon-ferramentas"></ion-icon>
+             <ion-label>
+             Motorola
+             </ion-label>
+           <a href="https://www.stockrom.net/motorola" target="_blank">  
+            <ion-icon name="link-outline" class="icon-ferramentas"></ion-icon>
+           </a>
+
+        </ion-item>
+
+        <ion-item>
+            
+          <ion-icon name="checkmark-outline" class="icon-ferramentas"></ion-icon>
+            <ion-label>
+            Sony
+            </ion-label>
+            <a href="https://www.stockrom.net/sony" target="_blank"> 
+             <ion-icon name="link-outline" class="icon-ferramentas"></ion-icon>
+            </a>
+          
+       </ion-item>
+       <ion-item>
+       
+         <ion-icon name="checkmark-outline" class="icon-ferramentas"></ion-icon>
+            <ion-label>
+            Combination
+            </ion-label>
+          <a href="https://www.stockrom.net/combination" target="_blank">  
+           <ion-icon name="link-outline" class="icon-ferramentas"></ion-icon>
+          </a>
+
+       </ion-item>
+       <ion-item>
+       
+         <ion-icon name="checkmark-outline" class="icon-ferramentas"></ion-icon>
+            <ion-label>
+            Acer
+            </ion-label>
+          <a href="https://www.stockrom.net/acer" target="_blank">  
+           <ion-icon name="link-outline" class="icon-ferramentas"></ion-icon>
+          </a>
+
+       </ion-item>
+       <ion-item>
+       
+         <ion-icon name="checkmark-outline" class="icon-ferramentas"></ion-icon>
+            <ion-label>
+            Alcatel
+            </ion-label>
+          <a href="https://www.stockrom.net/alcate" target="_blank">  
+           <ion-icon name="link-outline" class="icon-ferramentas"></ion-icon>
+          </a>
+
+       </ion-item>
+
+       <ion-item>
+       
+        <ion-icon name="checkmark-outline" class="icon-ferramentas"></ion-icon>
+           <ion-label>
+           Asus
+           </ion-label>
+         <a href="https://www.stockrom.net/asus" target="_blank">  
+          <ion-icon name="link-outline" class="icon-ferramentas"></ion-icon>
+         </a>
+
+      </ion-item>
+
+      
+      <ion-item>
+       
+        <ion-icon name="checkmark-outline" class="icon-ferramentas"></ion-icon>
+           <ion-label>
+           CCE
+           </ion-label>
+         <a href="https://www.stockrom.net/cce" target="_blank">  
+          <ion-icon name="link-outline" class="icon-ferramentas"></ion-icon>
+         </a>
+
+      </ion-item>
+
+      
+      <ion-item>
+       
+        <ion-icon name="checkmark-outline" class="icon-ferramentas"></ion-icon>
+           <ion-label>
+           Genesis
+           </ion-label>
+         <a href="https://www.stockrom.net/genesis" target="_blank">  
+          <ion-icon name="link-outline" class="icon-ferramentas"></ion-icon>
+         </a>
+
+      </ion-item>
+      
+      <ion-item>
+       
+        <ion-icon name="checkmark-outline" class="icon-ferramentas"></ion-icon>
+           <ion-label>
+           Huawei
+           </ion-label>
+         <a href="https://www.stockrom.net/huawei" target="_blank">  
+          <ion-icon name="link-outline" class="icon-ferramentas"></ion-icon>
+         </a>
+
+      </ion-item>
+
+      <ion-item>
+       
+        <ion-icon name="checkmark-outline" class="icon-ferramentas"></ion-icon>
+           <ion-label>
+           Infinix
+           </ion-label>
+         <a href="https://www.stockrom.net/infinix" target="_blank">  
+          <ion-icon name="link-outline" class="icon-ferramentas"></ion-icon>
+         </a>
+
+      </ion-item>
+      <ion-item>
+       
+        <ion-icon name="checkmark-outline" class="icon-ferramentas"></ion-icon>
+           <ion-label>
+           Leeco
+           </ion-label>
+         <a href="https://www.stockrom.net/2017/01/leeco-le-s3-um-smartphone-com-um-bo.html" target="_blank">  
+          <ion-icon name="link-outline" class="icon-ferramentas"></ion-icon>
+         </a>
+
+      </ion-item>
+
+
+      </ion-list>  
+
+    </ion-content>
+  </ng-template>
+</ion-modal>
+
+ <!-- Modal Ferramentas -->
+ <ion-modal [isOpen]="isModalOpen2" (ionModalDidDismiss)="setOpen2(false)">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Ferramentas FRP</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="setOpen2(false)">Fechar</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+
+      <ion-list style="--ion-background-color: #ffffff;">
+        <ion-item>
+            
+            <ion-icon class="icon-ferramentas" name="newspaper-outline"></ion-icon>
+             <ion-label>
+             Frp5.apk 
+             </ion-label>
+             <a href="https://firebasestorage.googleapis.com/v0/b/manual-do-tecnico-ce164.appspot.com/o/st%2FFRP5.apk?alt=media&token=ec7dd713-5a59-4f2a-8c66-bbfbbd96bde3" target="_blank"> 
+             <ion-icon class="icon-ferramentas" name="download-outline"></ion-icon>
+             </a>
+           
+        </ion-item>
+        <ion-item>
+        
+          <ion-icon class="icon-ferramentas" name="newspaper-outline"></ion-icon>
+             <ion-label>
+             FrpBypass
+             </ion-label>
+           <a href="https://firebasestorage.googleapis.com/v0/b/manual-do-tecnico-ce164.appspot.com/o/st%2FFRpBypass.apk?alt=media&token=dc6743b8-4947-4443-8230-39823c06fdba" target="_blank">  
+           <ion-icon class="icon-ferramentas" name="download-outline" ></ion-icon>
+           </a>
+
+        </ion-item>
+        <ion-item>
+
+            <ion-icon class="icon-ferramentas" name="newspaper-outline"></ion-icon>
+             <ion-label>
+             Gerente de conta Google
+             </ion-label>
+             <a href="https://firebasestorage.googleapis.com/v0/b/manual-do-tecnico-ce164.appspot.com/o/st%2FFRP6.apk?alt=media&token=f60c8751-5929-4894-9839-0480929af61f" target="_blank"> 
+              <ion-icon class="icon-ferramentas" name="download-outline" ></ion-icon>
+            </a>
+
+        </ion-item>
+        <ion-item>
+
+           <ion-icon class="icon-ferramentas" name="newspaper-outline"></ion-icon>
+             <ion-label>
+             Teste de Pc
+             </ion-label>
+             <a href="https://firebasestorage.googleapis.com/v0/b/manual-do-tecnico-ce164.appspot.com/o/st%2FTest%20DPC_3.0.11_apk-dl.com.apk?alt=media&token=b5d2729d-53b3-4279-86ed-ab415a135be8" 
+             target="_blank"> 
+              <ion-icon class="icon-ferramentas" name="download-outline" ></ion-icon>
+            </a>  
+
+        </ion-item>
+        <ion-item>
+            
+            <ion-icon class="icon-ferramentas" name="newspaper-outline"></ion-icon>
+             <ion-label>
+             Software para desbloquear moto g4
+             </ion-label>
+             <a href="https://firebasestorage.googleapis.com/v0/b/manual-do-tecnico-ce164.appspot.com/o/st%2FTechlogoblock_delta-Blur_Version.25.236.3-28.1.43.athene.retail.en.US.zip?alt=media&token=187ed87f-a466-4b6b-97f3-db6cd264b53d" target="_blank">
+             <ion-icon class="icon-ferramentas" name="download-outline" ></ion-icon>
+            </a>
+           
+        </ion-item>
+        <ion-item>
+        
+          <ion-icon class="icon-ferramentas" name="newspaper-outline"></ion-icon>
+             <ion-label>
+             Programa e arquivo de Desbloqueio a11 (AD12) (BN3)
+             </ion-label>
+
+            <a href="https://firebasestorage.googleapis.com/v0/b/manual-do-tecnico-ce164.appspot.com/o/st%2FSAMSUNG_FRP_EDL_A11%20e%20a02s%20ANDROID%2010%2C11%2C12.rar?alt=media&token=99e92837-d7d1-4d58-ac1b-70fa98f59c34" 
+             target="_blank">
+               <ion-icon class="icon-ferramentas" name="download-outline" ></ion-icon>
+             </a>
+           
+        </ion-item>
+        <ion-item>
+
+            <ion-icon class="icon-ferramentas" name="newspaper-outline"></ion-icon>
+             <ion-label>
+             Programa unlocktools para Pc 
+             </ion-label>
+            <a href="https://firebasestorage.googleapis.com/v0/b/manual-do-tecnico-ce164.appspot.com/o/st%2FUnlockTool-2023-11-29-0.exe?alt=media&token=1a133cee-66cc-4257-bc11-93dd943fb78f" 
+             target="_blank">  
+            <ion-icon class="icon-ferramentas" name="download-outline" ></ion-icon> 
+            </a>
+
+        </ion-item>
+        <ion-item>
+
+           <ion-icon class="icon-ferramentas" name="newspaper-outline" ></ion-icon>
+             <ion-label>
+             Sam frp 
+             </ion-label>
+            <a href="https://firebasestorage.googleapis.com/v0/b/manual-do-tecnico-ce164.appspot.com/o/st%2FSamFw_FRP_Tool_v3.0.zip?alt=media&token=dc5bda10-aef2-4f89-8eda-bcf2a8dffcd4" 
+             target="_blank">  
+             <ion-icon class="icon-ferramentas" name="download-outline" ></ion-icon> 
+             </a>
+        </ion-item>
+        
+        </ion-list>
+
+    </ion-content>
+  </ng-template>
+</ion-modal>
+
+</ion-content>
