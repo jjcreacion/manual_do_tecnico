@@ -1,10 +1,15 @@
 #container {
   text-align: center;
-  position: absolute;
+  position: relative;
   left: 0;
   right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 10%;
+}
+
+@media (max-width: 767px), (max-width: 991px) { /* sm y md */
+  #container {
+    top: 0;
+  }
 }
 
 ion-label, ion-list{
@@ -46,6 +51,11 @@ ion-icon {
   color: rgb(50, 173, 226);
 }
 
+.icon-header {
+  font-size: inherit;
+  color: inherit;
+}
+
 .icon-ferramentas {
   font-size: 24px;
   color: #060606;
@@ -73,4 +83,8 @@ ion-label:hover{
 ion-card:hover {
   background-color: rgb(255, 255, 255); /* Cambia al color de fondo al pasar el cursor */
   border: 2px solid rgb(210, 242, 25); /* Cambia al color de borde al pasar el cursor */
+}
+.my-footer{
+  color: var(--ion-color-primary-contrast);
+  background-color: green !important;
 }

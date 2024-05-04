@@ -1,25 +1,31 @@
 <ion-header [translucent]="true">
   <ion-toolbar class="my-custom-header">
- <ion-title>
-  Manual do Técnico
- </ion-title>
- <ion-buttons slot="start">
-   <ion-menu-button menu="main-menu"></ion-menu-button>
- </ion-buttons>
- <ion-buttons slot="end">
-  <ion-icon name="home-outline" ></ion-icon>Home
-  <ion-icon name="exit-outline"></ion-icon>Sair
-</ion-buttons>
-</ion-toolbar>
-</ion-header>
+   <ion-title>
+
+   </ion-title>
+   <ion-buttons slot="start">
+     <ion-menu-button menu="main-menu"></ion-menu-button>
+   </ion-buttons>
+  
+    <ion-button [routerLink]="['/home']" slot="end" color="success" class="button-home">
+      <ion-icon class="icon-header" slot="start" name="home"></ion-icon>
+      Home
+    </ion-button>
+    <ion-button slot="end" color="danger">
+      <ion-icon class="icon-header" slot="start" name="exit"></ion-icon>
+      Sair
+    </ion-button>
+  
+  </ion-toolbar>
+</ion-header> 
  
 <ion-content [fullscreen]="true">
   <div id="container">
    <ion-grid fixed>
-     <ion-row>
-       <ion-col>
-         
-       <ion-card [routerLink]="['/conduc']">
+    <ion-row>
+      <ion-col size-lg="1" class="ion-hide-sm-down ion-hide-md-down"></ion-col>
+      <ion-col size-lg="2" size-md="4" size-sm="6">  
+      <ion-card [routerLink]="['/conduc']">
          <ion-card-header>
            <ion-card-title><ion-icon name="git-compare-outline"></ion-icon></ion-card-title>
            <ion-card-title> Conduçao Reversa </ion-card-title>
@@ -27,7 +33,7 @@
        </ion-card>
 
      </ion-col>
-       <ion-col>
+       <ion-col size-lg="2" size-md="4" size-sm="6">
 
          <ion-card [routerLink]="['/esque']">
            <ion-card-header>
@@ -37,7 +43,7 @@
          </ion-card>
 
        </ion-col>
-       <ion-col>
+       <ion-col size-lg="2" size-md="4" size-sm="6">
 
          <ion-card [routerLink]="['/loja']">
            <ion-card-header>
@@ -47,7 +53,7 @@
          </ion-card>
 
        </ion-col>
-       <ion-col>
+       <ion-col size-lg="2" size-md="4" size-sm="6">
 
          <ion-card [routerLink]="['/codigos']">
            <ion-card-header>
@@ -57,7 +63,7 @@
          </ion-card>
 
        </ion-col>
-       <ion-col>
+       <ion-col size-lg="2" size-md="4" size-sm="6">
          
          <ion-card [routerLink]="['/aulas']">
            <ion-card-header>
@@ -67,10 +73,11 @@
          </ion-card>
 
        </ion-col>
-     </ion-row>
+       </ion-row>
 
-     <ion-row>
-       <ion-col>
+       <ion-row>
+        <ion-col size-lg="1"></ion-col>
+       <ion-col size-lg="2" size-md="4" size-sm="6">
          
          <ion-card (click)="openModal($event)" href="">
            <ion-card-header>
@@ -80,7 +87,7 @@
          </ion-card>
 
      </ion-col>
-       <ion-col>
+       <ion-col size-lg="2" size-md="4" size-sm="6">
 
          <ion-card href="https://wa.me/554588312858" target="_blank">
            <ion-card-header>
@@ -90,7 +97,7 @@
          </ion-card>
 
        </ion-col>
-       <ion-col>
+       <ion-col size-lg="2" size-md="4" size-sm="6">
 
          <ion-card href="https://play.google.com/store/apps/details?id=com.my.manualdotecnico&hl=pt_BR&gl=US" target="_blank">
            <ion-card-header>
@@ -100,7 +107,7 @@
          </ion-card>
 
        </ion-col>
-       <ion-col>
+       <ion-col size-lg="2" size-md="4" size-sm="6">
         
          <ion-card href="https://www.consultaaparelhoimpedido.com.br/public-web/home" target="_blank">
            <ion-card-header>
@@ -110,7 +117,7 @@
          </ion-card>
 
        </ion-col>
-       <ion-col>
+       <ion-col size-lg="2" size-md="4" size-sm="6">
          <ion-card (click)="openModal2($event)" href="">
            <ion-card-header>
              <ion-card-title><ion-icon name="hammer-outline"></ion-icon></ion-card-title>
@@ -119,6 +126,7 @@
          </ion-card>
 
        </ion-col>
+      
      </ion-row>
    </ion-grid>
  </div>
@@ -420,3 +428,8 @@
 </ion-modal>
 
 </ion-content>
+<ion-footer collapse="fade">
+  <ion-toolbar>
+    <ion-title class="title-footer">Manual do Técnico ©</ion-title>
+  </ion-toolbar>
+</ion-footer>

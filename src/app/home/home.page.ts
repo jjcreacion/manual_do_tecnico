@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -12,8 +13,12 @@ export class HomePage {
   isModalOpen = false;
   isModalOpen2 = false;
 
-  constructor() {}
+  constructor(private menu: MenuController) {}
 
+  ionViewWillEnter() {
+    this.menu.close('main-menu');
+  }
+  
   setOpen(isOpen: boolean) {
     this.isModalOpen = isOpen;
   }

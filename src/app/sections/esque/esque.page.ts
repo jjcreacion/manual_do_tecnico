@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiWebService } from 'src/app/api/api-web.service';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-esque',
@@ -17,8 +18,12 @@ export class EsquePage implements OnInit {
   selectedItem : any;
   presentingElement : any;
   url = 'esque/list';
+  loading: any;
 
-  constructor(private apiService:ApiWebService) { }
+  constructor(
+    private apiService:ApiWebService,
+    public loadingController: LoadingController
+  ) { }
 
   
   ngOnInit() {
@@ -26,8 +31,17 @@ export class EsquePage implements OnInit {
     this.presentingElement = document.querySelector('.ion-page');
   }
 
+  async presentLoading() {
+    this.loading = await this.loadingController.create({
+      message: 'Cargando...'
+    });
+    await this.loading.present();
+    return this.loading;
+  }
+
   listar(){
     // Intentar hacer interfaces
+    this.presentLoading().then(() => {
     this.apiService.getData(this.url).subscribe((respuesta) => {
       
         this.data = Object.keys(respuesta).map(key => ({
@@ -40,7 +54,9 @@ export class EsquePage implements OnInit {
         console.log(this.results);
         console.log("Total de paginas = "+this.totalDePaginas());
         this.paginas = this.totalDePaginas();
+        this.loading.dismiss();
       });
+    });
   }
   
    generarRango(cantidad: number): number[] {
