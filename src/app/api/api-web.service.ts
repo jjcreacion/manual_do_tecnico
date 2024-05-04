@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
 
 export class ApiWebService {
 
-  private urlApi = 'https://manual-do-tecnico-backend.onrender.com/';
+  /* private urlApi = 'https://manual-do-tecnico-backend.onrender.com/'; */
+  private urlApi = 'https://manualdotecnicobackend.vercel.app/';
 
   constructor(private http:HttpClient) { }
 
